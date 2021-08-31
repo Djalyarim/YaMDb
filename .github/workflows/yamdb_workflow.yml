@@ -60,11 +60,18 @@ jobs:
             sudo docker pull djalyarim/yamdb_final:v1
             sudo docker-compose stop
             sudo docker-compose rm web
-            touch .env 
+            touch db_postgres.env
+            echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> db_postgres.env
+            echo DB_NAME=${{ secrets.DB_NAME }} >> db_postgres.env
+            echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> db_postgres.env
+            echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> db_postgres.env
+            echo DB_HOST=${{ secrets.DB_HOST }} >> db_postgres.env
+            echo DB_PORT=${{ secrets.DB_PORT }} >> db_postgres.env
+            touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
-            echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> .env
-            echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
+            echo DB_USER=${{ secrets.DB_USER }} >> .env
+            echo DB_PASSWORD=${{ secrets.DB_PASSWORD }} >> .env
             echo DB_HOST=${{ secrets.DB_HOST }} >> .env
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             sudo docker-compose up -d 
