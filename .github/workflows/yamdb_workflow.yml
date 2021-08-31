@@ -42,7 +42,7 @@ jobs:
         uses: docker/build-push-action@v2 # Выполняет push образа в DockerHub 
         with:
           push: true
-          tags: djalyarim/yamdb_final:latest
+          tags: djalyarim/yamdb_final:v1
 
   deploy:
     runs-on: ubuntu-latest
