@@ -1,3 +1,4 @@
+![Workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?event=pull_request)
 # REST API Yamdb
 База отзывов пользователей о произведениях.
 ## Описание
