@@ -9,7 +9,7 @@ services:
       - ./db_postgres.env
   web:
     image: djalyarim/yamdb_final
-    build: .
+    # build: .
     restart: always
     volumes:
       - static_value:/code/static/
