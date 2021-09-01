@@ -6,8 +6,8 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
-       - ./db_postgres.env
-      # - ./.env
+      #  - ./db_postgres.env
+      - ./.env
   web:
     image: djalyarim/yamdb_final:v1
     # build: .

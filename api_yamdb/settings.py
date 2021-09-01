@@ -14,7 +14,6 @@ DEBUG = False
 ALLOWED_HOSTS = [
     # 'localhost',
     # '127.0.0.1',
-    'web'
     '[::1]',
     '84.252.137.153',
     'axiom.co.vu',
@@ -67,27 +66,27 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'POSTGRES_USER': 'postgres',
-#         'POSTGRES_PASSWORD': 'postgres',
-#         'HOST': 'db',
-#         'PORT': '5432',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('DB_ENGINE', default='django.db.backends.postgresql'),
-        'NAME': os.environ.get('DB_NAME'),
-        'POSTGRES_USER': os.environ.get('DB_USER'),
-        'POSTGRES_PASSWORD': os.environ.get('PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'POSTGRES_USER': 'postgres',
+        'POSTGRES_PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': '5432',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': os.environ.get('DB_ENGINE', default='django.db.backends.postgresql'),
+#         'NAME': os.environ.get('DB_NAME'),
+#         'POSTGRES_USER': os.environ.get('DB_USER'),
+#         'POSTGRES_PASSWORD': os.environ.get('PASSWORD'),
+#         'HOST': os.environ.get('DB_HOST'),
+#         'PORT': os.environ.get('DB_PORT'),
+#     }
+# }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
