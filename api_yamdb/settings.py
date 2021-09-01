@@ -14,6 +14,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     # 'localhost',
     # '127.0.0.1',
+    'web'
     '[::1]',
     '84.252.137.153',
     'axiom.co.vu',
