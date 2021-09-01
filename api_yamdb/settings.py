@@ -11,15 +11,16 @@ SECRET_KEY = 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    '*',
 #     # 'localhost',
 #     # '127.0.0.1',
-#     'web',
+    'web',
 #     'web:8000',
 #     '[::1]',
-#     '84.252.137.153',
-#     'axiom.co.vu',
-# ]
+    '84.252.137.153',
+    'axiom.co.vu',
+]
 
 
 # Application definition
@@ -83,8 +84,8 @@ DATABASES = {
     'default': {
         'ENGINE': os.environ.get('DB_ENGINE', default='django.db.backends.postgresql'),
         'NAME': os.environ.get('DB_NAME'),
-        'POSTGRES_USER': os.environ.get('DB_USER'),
-        'POSTGRES_PASSWORD': os.environ.get('PASSWORD'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
         'HOST': os.environ.get('DB_HOST'),
         'PORT': os.environ.get('DB_PORT'),
     }
