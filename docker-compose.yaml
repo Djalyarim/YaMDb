@@ -7,11 +7,8 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./db_postgres.env
-      # - ./.env
   web:
     image: djalyarim/yamdb_final:v1
-    # build: .
-    # restart: always
     volumes:
       - static_value:/code/static/
       - media_value:/code/media/
@@ -22,7 +19,6 @@ services:
 
   nginx:
     image: nginx:1.19.3
-    # restart: always
     ports:
       - "80:80"
 
