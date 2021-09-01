@@ -17,52 +17,45 @@
 * REVIEWS: отзывы на произведения.
 * COMMENTS: комментарии к отзывам.
 
+## Workflow состоит из четырёх шагов:
+Тестирование проекта.
+Сборка и публикация образа.
+Автоматический деплой.
+Отправка уведомления в персональный чат.
+
 ## Технологии
-Python 3, Django 3, Django REST Framework, PostgreSQL, Docker, Simple-JWT.
+Python 3, Django 3, Django REST Framework, PostgreSQL, Docker, Simple-JWT, Git Actions, Workflow, Telegram.
 
 ## Запуск проекта
-Для работы приложения требуется установка на ваш компьютер Python, PostgreSQL, Docker.
+Для работы приложения требуется установка на ваш компьютер Python, PostgreSQL, Docker, виртуальный сервер и бот в телеграме.
+(если бота нет закоментируйте в файле yamdb_workflow.yml job send_message) 
 
 Склонируйте репозиторий на локальную машину:
 ```shell
-git clone https://github.com/Djalyarim/infra_sp2.git
+git clone https://github.com/Djalyarim/yamdb_final
 ```
 Установите и активируйте виртуальное окружение.
 
-Сделайте 2 файла: .env и db_postgres.env (инструкции в файле .env.template).
+На сервере остановите службу ngnix (если она запущена).
+```shell
+sudo systemctl stop nginx 
+```
+Установите docker. Для этого выполните команду:
+```shell
+sudo apt install docker.io 
+```
+Установите docker-compose согласно официальной документации:
+```shell
+https://docs.docker.com/compose/install/
+```
+Скопируйте файлы docker-compose.yaml и nginx/default.conf из проекта на сервер в home/<ваш_username>/docker-compose.yaml и home/<ваш_username>/nginx/default.conf соответственно.
 
-Запустите docker-compose:
-```shell
-docker-compose up -d --build   
-```
-Применените миграции базы данных:
-```shell
-docker-compose exec web python manage.py makemigrations 
-docker-compose exec web python manage.py migrate
-```
+Добавьте в Secrets GitHub Actions переменные окружения для работы базы данных из файла .env.template
 
-Обновите статику:
-```shell
-docker-compose exec web python manage.py collectstatic
-```
-
-Создайте суперпользователя:
-```shell
-docker-compose exec web python manage.py createsuperuser
-```
-Заполнените базы тестовыми данными:
-```shell
-docker-compose exec web python manage.py loaddata fixtures.json
-```
-
-> Для остановки docker-compose:
-```shell
-docker-compose down
-```
-API доступен по адресу http://127.0.0.1/api/v1/.
+API доступен по адресу http://84.252.137.153/api/v1/.
 
 ## Документация
-http://localhost/redoc/.
+http://84.252.137.153/redoc/.
 
 ## Автор
 Проект разработал Djalyarim.
