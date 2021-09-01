@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     # 'localhost',
@@ -75,11 +75,11 @@ WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 #         'HOST': 'db',
 #         'PORT': '5432',
 #     }
-# } default='django.db.backends.postgresql'
+# }
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('DB_ENGINE'),
+        'ENGINE': os.environ.get('DB_ENGINE', default='django.db.backends.postgresql'),
         'NAME': os.environ.get('DB_NAME'),
         'POSTGRES_USER': os.environ.get('DB_USER'),
         'POSTGRES_PASSWORD': os.environ.get('PASSWORD'),
