@@ -10,7 +10,7 @@ services:
   web:
     image: djalyarim/yamdb_final:v1
     # build: .
-    restart: always
+    # restart: always
     volumes:
       - static_value:/code/static/
       - media_value:/code/media/
