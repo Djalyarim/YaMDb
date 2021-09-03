@@ -60,7 +60,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           stack_file_name: docker-compose.yaml
           script: |
-            sudo docker pull djalyarim/yamdb_final:v1
+            sudo docker pull djalyarim/yamdb_final
             sudo docker-compose stop
             sudo docker-compose rm web
             touch db_postgres.env
