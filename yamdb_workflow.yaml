@@ -44,7 +44,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: djalyarim/yamdb_final
+          tags: djalyarim/yamdb_final:latest
 
   deploy:
     if: github.ref == 'refs/heads/master'
@@ -59,7 +59,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            sudo docker pull djalyarim/yamdb_final
+            sudo docker pull djalyarim/yamdb_final:latest
             sudo docker-compose stop
             sudo docker-compose rm web
             touch db_postgres.env
