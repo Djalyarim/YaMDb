@@ -9,7 +9,7 @@ services:
       - ./db_postgres.env
       
   web:
-    image: djalyarim/yamdb_final:v1
+    image: djalyarim/yamdb_final
     volumes:
       - static_value:/code/static/
       - media_value:/code/media/
