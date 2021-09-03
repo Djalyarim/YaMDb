@@ -50,7 +50,7 @@ https://docs.docker.com/compose/install/
 ```
 Скопируйте файлы docker-compose.yaml и nginx/default.conf из проекта на сервер в home/<ваш_username>/docker-compose.yaml и home/<ваш_username>/nginx/default.conf соответственно.
 
-Добавьте в Secrets GitHub Actions переменные окружения для работы базы данных из файла .env.template
+Добавьте в Secrets GitHub Actions переменные окружения для работы базы данных из файла .env.template.
 
 API доступен по адресу http://84.252.137.153/api/v1/.
 
