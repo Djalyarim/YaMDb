@@ -44,7 +44,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: djalyarim/yamdb_final:v1
+          tags: djalyarim/yamdb_final
 
   deploy:
     if: github.ref == 'refs/heads/master'
